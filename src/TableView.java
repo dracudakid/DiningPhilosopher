@@ -122,8 +122,8 @@ public class TableView extends JPanel implements Runnable{
 		switch(p.getId()){
 		case 0:
 			if(p.getState() == Philosopher.EATING){
-				left.setPosition(250, 0);
-				right.setPosition(280, 0);
+				left.setPosition(235, 75);
+				right.setPosition(285, 75);
 			}
 			else if(left.getState() != Chopstick.IS_USING){
 				// 180, 140
@@ -132,42 +132,42 @@ public class TableView extends JPanel implements Runnable{
 			break;
 		case 1:
 			if(p.getState() == Philosopher.EATING){
-				left.setPosition(20, 150);
-				right.setPosition(50, 150);
+				left.setPosition(80, 225);
+				right.setPosition(90, 170);
 			}
 			else if(left.getState() != Chopstick.IS_USING){
 				// 110, 360
-				left.setPosition(140, 280);
+				left.setPosition(140, 290);
 			}
 			break;
 		case 2:
 			if(p.getState() == Philosopher.EATING){
-				left.setPosition(50, 400);
-				right.setPosition(80, 400);
+				left.setPosition(170, 400);
+				right.setPosition(130, 380);
 			}
 			else if(left.getState() != Chopstick.IS_USING){
 				// 300, 500
-				left.setPosition(250, 350);
+				left.setPosition(260, 375);
 			}
 			break;
 		case 3:
 			if(p.getState() == Philosopher.EATING){
-				left.setPosition(450, 400);
-				right.setPosition(480, 400);
+				left.setPosition(385, 380);
+				right.setPosition(350, 400);
 			}
 			else if(left.getState() != Chopstick.IS_USING){
 				// 500, 360
-				left.setPosition(500, 360);
+				left.setPosition(390, 285);
 			}
 			break;
 		case 4:
 			if(p.getState() == Philosopher.EATING){
-				left.setPosition(480, 150);
-				right.setPosition(510, 150);
+				left.setPosition(430, 160);
+				right.setPosition(440, 215);
 			}
 			else if(left.getState() != Chopstick.IS_USING){
 				// 420, 140
-				left.setPosition(420, 140);
+				left.setPosition(355, 145);
 			}
 			break;
 		}
