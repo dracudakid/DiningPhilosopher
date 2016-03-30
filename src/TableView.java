@@ -22,6 +22,7 @@ public class TableView extends JPanel implements Runnable{
 	
 	public TableView(Philosopher[] phis) {
 		this.philosophers = phis;
+		setBackground(Color.WHITE);
 		
 		try {
 			imgTable = ImageIO.read(new File("/home/rayleighs/workspace/DiningPhilosophers/images/table.png"));
@@ -174,65 +175,91 @@ public class TableView extends JPanel implements Runnable{
 	}
 	private void drawFaceOnTable(Graphics g, Philosopher p){
 		int state = p.getState();
+		g.setFont(new Font("serif", Font.BOLD, 30));
 		switch (p.getId()) {
 		case 0:
 			// 280, 60
 //			g.drawImage(imgThink, 250, 0, 100, 100, null);
 			drawStateImage(g, state, 230, 10);
+			g.drawString("0", 330, 30);
 			break;
 		case 1:
 //			g.drawImage(imgHungry, 20, 150, 100, 100, null);
 			//60, 230
 			drawStateImage(g, state, 10, 170);
+			g.drawString("1", 0, 180);
 			break;
 		case 2:
 //			g.drawImage(imgEating, 50, 400, 120, 100, null);
 			// 160, 500
 			drawStateImage(g, state, 110, 450);
+			g.drawString("2", 90, 480);
 			break;
 		case 3:
 //			g.drawImage(imgEating, 450, 400, 100, 100,	null);
 			// 460, 500
 			drawStateImage(g, state, 410, 450);
+			g.drawString("3", 510, 470);
 			break;
 		case 4:
 //			g.drawImage(imgHungry, 480, 150, 100, 100, null);
 			// 540, 230
 			drawStateImage(g, state, 490, 170);
+			g.drawString("4", 490, 170);
 		default:
 			break;
 		}
 	}
 	private void drawFace(Graphics g, Philosopher p){
 		g.setColor(Color.BLACK);
-		g.setFont(new Font("Serif", Font.PLAIN, 30));
+		g.setFont(new Font("Serif", Font.ITALIC, 20));
 		int left = 600;
 		int state = p.getState();
 		switch (p.getId()) {
 		case 0:
 			drawStateImage(g, state, left, 0);
+			g.setColor(Color.BLACK);
+			g.drawString("Philospher 0", left+100, 20);
+			
 			drawStateString(g, state, left + 100, 50);
-			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 100);
+			g.setColor(Color.BLACK);
+			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 80);
 			break;
 		case 1:
 			drawStateImage(g, state, left, 120);
+			g.setColor(Color.BLACK);
+			g.drawString("Philospher 1", left+100, 140);
+			
 			drawStateString(g, state, left + 100, 170);
-			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 220);
+			g.setColor(Color.BLACK);
+			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 200);
 			break;
 		case 2:
 			drawStateImage(g, state, left, 240);
+			g.setColor(Color.BLACK);
+			g.drawString("Philospher 2", left+100, 260);
+			
 			drawStateString(g, state, left + 100, 290);
-			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 340);
+			g.setColor(Color.BLACK);
+			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 320);
 			break;
 		case 3:
 			drawStateImage(g, state, left, 360);
+			g.setColor(Color.BLACK);
+			g.drawString("Philospher 3", left+100, 380);
+			
 			drawStateString(g, state, left + 100, 410);
-			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 460);
+			g.setColor(Color.BLACK);
+			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 440);
 			break;
 		case 4:
 			drawStateImage(g, state, left, 480);
+			g.setColor(Color.BLACK);
+			g.drawString("Philospher 4", left+100, 500);
+			
 			drawStateString(g, state, left+100, 530);
-			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 580);
+			g.setColor(Color.BLACK);
+			g.drawString("No of meal: "+p.getNoOfMeal(), 700, 560);
 			break;
 		default:
 			break;
@@ -252,11 +279,14 @@ public class TableView extends JPanel implements Runnable{
 	
 	private void drawStateString(Graphics g, int state, int x, int y){
 		if(state == Philosopher.EATING){
+			g.setColor(Color.GREEN);
 			g.drawString("Eating", x, y );
 		}
 		else if (state == Philosopher.THINKING){
+			g.setColor(Color.BLUE);
 			g.drawString("Thinking", x, y);
 		} else {
+			g.setColor(Color.GREEN);
 			g.drawString("Hungry", x, y);
 		}
 	}

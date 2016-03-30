@@ -17,9 +17,9 @@ public class DiningPhilosopher {
 		philosophers[4] = new Philosopher(4, chopsticks[4], chopsticks[3]);
 		
 		new View(philosophers);
-		for(int i=0; i<philosophers.length; i++){
-			new Thread(philosophers[i]).start();
-		}
+//		for(int i=0; i<philosophers.length; i++){
+//			new Thread(philosophers[i]).start();
+//		}
 	}
 
 
